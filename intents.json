@@ -1,0 +1,661 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "good morning",
+        "Good"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hi",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thanks a lot!"
+      ],
+      "responses": [
+        "Happy to help!",
+        "Any time!",
+        "My pleasure",
+        "It's my pleasure"
+      ]
+    },
+    {
+      "tag": "working days",
+      "patterns": [
+        "working days in a week?",
+        "office schedule",
+        "office days",
+        "alchemy working days"
+      ],
+      "responses": ["Generally, Saturday to Thursday is considered working day and Friday is considered off day for all employees."]
+    },
+    {
+      "tag": "working time",
+      "patterns": [
+        "working time in a day",
+        "working time",
+        "office period",
+        "office time of alchemy",
+        "working hours",
+        "office stay time",
+        "office hours",
+        "office in-time",
+        "take intime",
+        "office out-time",
+        "take outtime",
+        "working hour in a day",
+        "office hour in a day"
+      ],
+      "responses": ["The office time is 10:00am to 07:00pm. There is a probable time for each job according to the ongoing work experience of the office. According to this, if any employee can perform the work, it is considered normal. But if an employee fails to perform the work assigned to him on time, then he may have to work even after office hour."]
+    },
+    {
+      "tag": "attendance",
+      "patterns": [
+        "attendance procedure",
+        "procedure of attendance",
+        "give attendance",
+        "attendance",
+        "attendance procedure alchemy"
+      ],
+      "responses": [
+        "Using the ICMS app the employee will give attendance by clicking two pictures. One is selfie and the other is shoefie. The pictures must be clear and in proper way as instructed. You can also ask 'attendance from office' or 'attendance outside of office'."
+      ]
+    },
+    {
+      "tag": "attendance from office",
+      "patterns": [
+        "give attendance from office?",
+        "attendance from office",
+        "attendance from inside office",
+        "office attendance",
+        "procedure of giving attendance from office"
+      ],
+      "responses": [
+          "The employees present in the office must give the attendance from inside of the office. Attendance in front of the elevator, under the office or from any other place will be considered as breaking the office rules."
+      ]
+    },
+    {
+      "tag": "attendance outside of office",
+      "patterns": [
+        "giving attendance outside of office?",
+        "attendance outside of office",
+        "attendance outside",
+        "attendance from outside",
+        "outside office attendance",
+        "procedure of giving attendance outside of office"
+      ],
+      "responses": [
+          "Those who will provide attendance from outside the office: If any person pays attendance from outside the office, he / she must specify the day before by entering in detail where he / she should be in the apps subject to his / her prior prior permission. And the details / pictures of the place should be mentioned at the time of his attendance and the picture should be taken at the time of attendance in such a way that the location of the place can be seen on the signboard."
+      ]
+    },
+    {
+      "tag": "exit attendance procedure",
+      "patterns": [
+        "exit attendance",
+        "exit attendance procedure",
+        "procedure of exit attendance",
+        "about exit attendance?",
+        "exit attendance from office?",
+        "exit attendance from office",
+        "giving exit attendance from office",
+        "procedure of giving exit attendance from office"
+      ],
+      "responses": [
+        "There are two sections of exit attendance- 1) 'exit attendance from office' and 2) 'exit attendance outside office'.(1->).Those who will provide exit attendance from the office:  In this case, you must give exit attendance from inside the office. Attendance in front of the elevator, under the office or from any other place will be considered as breaking the office rules."
+      ]
+    },
+    {
+      "tag": "exit attendance outside of office",
+      "patterns": [
+        "giving exit attendance outside of office?",
+        "exit attendance outside of office",
+        "exit attendance outside office",
+        "procedure of giving exit attendance outside of office"
+      ],
+      "responses": [
+          "If an employee need to leave the office for the sake of work, he / she must give an exit attendance stating why he / she should leave the office or place."
+      ]
+    },
+    {
+      "tag": "late attendance",
+      "patterns": [
+        "maximum late attendance",
+        "late attendance",
+        "getting late",
+        "give late attendance?",
+        "give attendance late?",
+        "about late attendance",
+        "attendance giving late?"
+      ],
+      "responses": [
+          "If an employee delays up to 15 minutes from the start of office hours, it will not be considered as delay. But if he joins in the delay from the next minute, it will be treated as a delay."
+      ]
+    },
+
+    {
+      "tag": "what is icms",
+      "patterns": [
+        "icms app",
+        "alchemy app",
+        "about icms",
+        "office app"
+      ],
+      "responses": ["A mobile app, provided by Alchemy Software Limited, by which an employee can easily update his/her daily work information and submit his/her attendance and more. And Alchemy provides mobile sim card to use the icms app where there will be enough internet to run the app out. \"It is mandatory for an employee to use icms for giving attendance and updating daily log outside of any inconvenience in app or server. "]
+    },
+    {
+      "tag": "use icms",
+      "patterns": [
+        "Reason to use the app",
+        "use icms?",
+        "use icms app?",
+        "update daily work",
+        "give daily log"
+      ],
+      "responses": ["All employees are required to provide information on all day-to-day activities and out-of-office attendance, starting from their attendance, using the ICMS apps provided by the office during office duty.i) Mobile internet and GPS must be kept on during duty time. Even if the employee has to go out during duty time or working purpose he/she has to keep the ICMS app on ii)Current working status must be updated in real time so that his superiors and management board know what he is currently working on. iii) Mobile SIM and internet with adequate balance will be provided by ASL. The package cannot be used for personal purpose and even if it is used for personal reason , the employee must update the package and keep the internet active to use the ICMS. iv) A compatible mobile handset has to use for using the ICMS app."]
+    },
+    {
+      "tag": "ICMS Server Problem",
+      "patterns": [
+        "server problem",
+        "app not work",
+        "icms doesn't work",
+        "give attendance without icms app",
+        "update daily log without icms app",
+        "update daily log if app doesn't work",
+        "updating daily log without giving attendance",
+        "app does not work",
+        "app doesn't work",
+        "app inconvenience",
+        "app server issue?",
+        "icms server problem",
+        "office server problem"
+      ],
+      "responses": ["You need to be confirmed discussing with your colleagues if there any apps or server issue. If so, mail your daily log to the office mail. If not, inform the support team to configure the problem and help you out. You can also inform immediately to the seniors and give an email with a screenshot mentioning the problem."]
+    },
+    {
+      "tag": "icms input system",
+      "patterns": [
+        "icms input system",
+        "icms input process",
+        "insert info in icms app?",
+        "training for icms",
+        "insert information in icms",
+        "input form training",
+        "update information in icms?",
+        "trained to use the app?",
+        "training regarding use of icms app",
+        "alchemy train employee for use of app"
+      ],
+      "responses": [
+        "Detailed training will be provided on which methods to input information in which input form of the app. If you have trouble understanding something during the training, you must clearly understand and inform in writing that you are not having any problem using the apps. Subsequent misrepresentation of information in the app will be deemed as intentional misrepresentation."
+      ]
+    },
+
+    {
+      "tag": "office sim or internet for personal use",
+      "patterns": [
+        "office sim for personal use",
+        "office sim or internet for personal use",
+        "office sim internet for personal reason?",
+        "sim and internet provided by office for personal use?"
+      ],
+      "responses": ["One can not use the sim or internet for personal reason. If do so, he/she must update the package of his own immediately, so that it creates no complexity using the app."]
+    },
+    {
+      "tag": "office doesn't provide mobile to use icms or the app",
+      "patterns": [
+        "office provide device use app",
+        "alchemy provide device",
+        "office device",
+        "office provide mobile use app",
+        "alchemy provide mobile phone",
+        "alchemy provide mobile phone give attendance",
+        "office provide mobile phone give attendance",
+        "office provide mobile phone",
+        "having mobile that do not support app",
+        "having mobile that do not support icms",
+        "don't have compatible mobile",
+        "do not have compatible mobile",
+        "have incompatible mobile",
+        "mobile phone",
+        "smart phone"
+      ],
+      "responses": ["Alchemy doesn't provide any mobile or devices to use icms. The Employee must have a smart phone and if there is any compatibility issue, the employee have to upgrade his/her phone of his own to use icms."]
+    },
+    {
+      "tag": "Going outside of office",
+      "patterns": [
+        "go outside of office",
+        "go outside in office time",
+        "go outside of office in office time",
+        "go outside of office in office time take breakfast",
+        "go outside of office in office time taking snacks",
+        "outside in office time",
+        "can go out of office in office time",
+        "alchemy allow going outside in office time",
+        "alchemy allow going outside"
+      ],
+      "responses": [
+          "An employee cannot go out of the office to have breakfast or for personal reason after giving attendance.  If there is an emergency and/or for official work, he must take the permission of in-charge. And If one go out of office in office time, he/she have to keep icms, gps and internet on. Otherwise, it will be considered intentional and proper action will be taken."
+      ]
+    },
+
+    {
+      "tag": "rules of imaging or capturing photo",
+      "patterns": [
+        "rules for capture image",
+        "capture photo using icms app",
+        "capturing photo office app",
+        "capture image icms app",
+        "take selfie give attendance",
+        "take selfie attendance",
+        "take shoefie give attendance",
+        "take shoefie attendance",
+        "take picture give attendance",
+        "take photo give attendance",
+        "capture picture give attendance",
+        "capture photo give attendance",
+        "capture image give attendance"
+      ],
+      "responses": ["Apps has the option to take pictures, you have to take pictures in the way displayed from the office. Providing a photo of one's own will would be considered intentional violation."]
+    },
+    {
+      "tag": "suggestion input",
+      "patterns": [
+        "icms app suggestion",
+        "give suggestion for icms app",
+        "give suggestion for mobile app",
+        "suggestion input",
+        "suggestion on icms app"
+      ],
+      "responses": [
+        "There are options in the app to let you know if you have any valuable suggestions, plan complaints, any other important issues that you are thinking about. Using that option you can give your valuable suggestions to the office if you want."
+      ]
+    },
+    {
+      "tag": "alchemy privacy policy",
+      "patterns": [
+        "office privacy policy",
+        "office policy",
+        "privacy policy alchemy",
+        "alchemy privacy?",
+        "alchemy maintain privacy?",
+        "any privacy policy?",
+        "about privacy policy"
+      ],
+      "responses": [
+          "Alchemy software limited maintain a very strict privacy policy. There is a great area in privacy policy. You can ask me about 'data privacy policy or data protection rules', 'informing office about any privacy inconvenience or issues', 'hiding identity problem', etc."
+      ]
+    },
+    {
+      "tag": "data privacy policy",
+      "patterns": [
+        "data privacy policy",
+        "about data privacy policy alchemy",
+        "about privacy protection rules",
+        "legal know others salary",
+        "legal inquiry others salary",
+        "data protection rules",
+        "protection rules"
+      ],
+      "responses": [
+          "An employee must keep the following matters very carefully confidential. 1) All important matters including salary allowance, privacy policy of the employment contract executed with Alchemy Software Limited and the employee. 2) Any work related to the department in which the employee is working or any matter or financial transaction related to the customer.3) There is a possibility of any kind of loss to the organization, customer or any employee working in the organization if any person from outside knows about any internal matter of the organization. 4) Not to discuss about the own facilities with other employees. 5) In case of need of work, the employee is informed and acquired various confidential information, software, miscellaneous matters of the organization and the customer. If such information is misused in any way, providing it to someone by deception will be considered as a crime. 6) Attempting to collect different types of information from another department on purpose will be considered as an offense."
+      ]
+    },
+    {
+      "tag": "informing office about any crime",
+      "patterns": [
+        "inform office about issue?",
+        "inform office about crime",
+        "inform office about inconvenience",
+        "not inform office",
+        "n't inform office",
+        "crime occur office",
+        "inconvenience",
+        "crime",
+        "issues",
+        "hiding identity",
+        "hiding identity problem"
+      ],
+      "responses": [
+          "1) If a crime is committed in the office or if there is a possibility that an employee knowingly withholds information, then he / she will be considered as involved in the crime and action will be taken. In that case if an employee does not want to report a crime directly to the management council, he or she can submit it to the office in a designated secret box (where there will be no cameras) or he/she can inform in the email specified under pseudonym. 2) If any employee (current or past) intentionally intends to collect various information (income or expenditure of his organization or a customer, property, product or customer list, salable customer list / update, any other sensitive information), he should inform the management in due time. 3) If any employee of any customer organization of Alchemy Software Limited is personally employed or engaged in business, permission must be given in writing."
+      ]
+    },
+    {
+      "tag": "attendance rule violation",
+      "patterns": [
+        "attendance Rules violation consequences",
+        "attendance rule violation",
+        "violate the attendance rules",
+        "violate rules of attendance",
+        "attendance rule",
+        "attendance rule violation penalties"
+      ],
+      "responses": ["Any rule violation of attendance will charge fine from salary and office may take any kind of severe punishment for the same kind of repetition. If there is a delay of three days in any month, one day's salary will be deducted for those three days. If exit attendance is given in front of the elevator, under the office or intentionally showing extra time from any other place, a fine of Tk. 50 will be charged for that day."]
+    },
+    {
+      "tag": "allowances",
+      "patterns": [
+        "offered allowance",
+        "provided allowance",
+        "alchemy allowance",
+        "allowances alchemy offer",
+        "allowances from office",
+        "reason for getting allowance",
+        "employee will get allowance",
+        "types allowance",
+        "types allowance offered alchemy",
+        "types allowance provided alchemy",
+        "office provide allowance",
+        "allowance offered alchemy",
+        "allowance provided alchemy"
+      ],
+      "responses": [
+          "Alchemy offers three types of allowances. - 1) Vehicle fee or Transportation fee 2)Travel allowance or Tour fee or visit fee and 3) Mobile bill"
+      ]
+    },
+    {
+      "tag": "transport fee",
+      "patterns": [
+        "transportation fee",
+        "transport fee",
+        "vehicle fee",
+        "transportation fee?",
+        "alchemy allow transportation fee?",
+        "alchemy allow vehicle fee?",
+        "alchemy offer transportation fee",
+        "alchemy offer vehicle fee",
+        "alchemy provide transportation fee",
+        "alchemy provide vehicle fee"
+      ],
+      "responses": [
+          "An employee will be paid a travel allowance for the distance from the office to his workplace and vise versa. Local/Public transport fees will vary according to the designation of the employee. And he/she must input the followings in the ICMS app : 1) Name of the place and destination of the journey, 2) The name of the organization he is going to, 3) What is the reason for going, 4) The name of the vehicle being ridden, 5) The amount of money. NB: '1)The fare for coming or going to the office from one's own home or house cannot be claimed as travel allowance.'"
+      ]
+    },
+    {
+      "tag": "tour fee",
+      "patterns": [
+        "tour fee",
+        "about tour fee?",
+        "alchemy allow tour fee?",
+        "alchemy offer tour fee",
+        "tour fee offered alchemy",
+        "travel allowance",
+        "travel allowance provided alchemy",
+        "travel fee",
+        "alchemy allow travel fee?",
+        "alchemy offer travel fee",
+        "travel fee offered alchemy",
+        "travel allowance offered alchemy"
+      ],
+      "responses": [
+          "Employees who goes on tour for official work purpose he/she will get the following allowance as tour fee: 1) All travel allowance from the office to the workplace, 2) Lunch and dinner bill, 3) Morning and afternoon breakfast bill, and 4) Hotel bill for accommodation. All the above issues should be mentioned in time in the apps provided by the office and the required tickets / bills / receipts / other documents should be submitted along with the tour report on the day of attendance at the end of the tour."
+      ]
+    },
+    {
+      "tag": "mobile bill",
+      "patterns": [
+        "mobile bill",
+        "mobile bill allowance",
+        "alchemy offer mobile bill",
+        "alchemy provide mobile bill",
+        "office offer mobile bill",
+        "office provide mobile bill",
+        "mobile bill offered alchemy",
+        "mobile bill provided alchemy",
+        "mobile bill offered office",
+        "mobile bill provided office"
+      ],
+      "responses": [
+          "It is mandatory to use the SIM provided by the office where talk time, SMS, internet package will be provided according to the department and designation of the employee. This SIM must always be kept on."
+      ]
+    },
+    {
+      "tag": "Hospitality",
+      "patterns": [
+        "facilities",
+        "hospitality",
+        "facilities in the office",
+        "facilities in office time",
+        "office provide tea",
+        "office provide coffee",
+        "office provide snacks",
+        "office provide breakfast",
+        "snacks provided office",
+        "tea provided office",
+        "coffee provided office",
+        "snacks offered office",
+        "tea offered office",
+        "coffee offered office",
+        "special facilities",
+        "special facilities provided office",
+        "special facilities offered office"
+      ],
+      "responses": [
+          "Office will provide 3 times tea/coffee and 2 times snacks in a day."
+      ]
+    },
+
+    {
+      "tag": "Leaves",
+      "patterns": [
+        "deserve monthly leave",
+        "monthly leave",
+        "leaves",
+        "maximum number leaves can take month",
+        "maximum number day leave month",
+        "days of leave an employee can take in a month",
+        "maximum leave per month",
+        "maximum leave in a month",
+        "leave per month",
+        "leaves an employee can get per month"
+      ],
+      "responses": [
+        "An employee will get a maximum of two days leave per month. If the employee wants, he/she can take maximum 5 days leave together with his/her earned leave. In that case, he/she must have at least 5 days leave remaining and have to apply for this leave at least 15 days in advance. Besides, No financial compensation will be paid against the earned leave. And if the leave earned every year is not spent within the year, it will not be transferred to the next year."
+      ]
+    },
+    {
+      "tag": "weekly Holiday",
+      "patterns": [
+        "weekly holiday",
+        "weekly off days",
+        "holidays",
+        "weekends week",
+        "holidays week",
+        "Off days",
+        "Off days week",
+        "weekends"
+      ],
+      "responses": [
+        "Friday is considered weekly holiday. "
+      ]
+    },
+
+    {
+      "tag": "govt. Holiday",
+      "patterns": [
+        "government holidays",
+        "govt holidays",
+        "govt. holidays",
+        "govt holiday",
+        "govt. holiday",
+        "alchemy follow government holiday",
+        "alchemy follow govt holiday",
+        "alchemy follow govt. holiday",
+        "alchemy allow government holiday",
+        "alchemy allow govt holiday",
+        "alchemy allow govt. holiday"
+      ],
+      "responses": ["Alchemy follows all govt. holidays."]
+    },
+    {
+      "tag": "Leave Application",
+      "patterns": [
+        "leave application",
+        "advance leave",
+        "apply for advanced leave",
+        "get leave advance",
+        "take leave advance",
+        "leave application process",
+        "advance leave process",
+        "advance leave application"
+      ],
+      "responses": [
+        "ICMS apps have arrangements to apply for leave in advance. After applying, it has to be printed and submitted to the appropriate authority with approval at least 3 working days in advance. Approved leave documents must be submitted to the HR department. For emergency leave, documents have to submitted within two working days of the beginning of the month prior to the preparation of the payroll or salary account for the month."
+      ]
+    },
+    {
+      "tag": "Emergency leave",
+      "patterns": [
+        "emergency leave",
+        "take emergency leave",
+        "get emergency leave",
+        "sudden leave",
+        "leave without prior information"
+      ],
+      "responses": [
+        "If an employee is unable to report for duty due to unavoidable reasons, he / she has to inform his / her superior by phone / WhatsApp and email details. The next present day on duty, you will have to submit the appropriate certificate and submit the approved documents subject to approval."
+      ]
+    },
+    {
+      "tag": "Mandatory day",
+      "patterns": [
+        "mandatory present day",
+        "mandatory present day",
+        "must attend days",
+        "must present day",
+        "must attend to the office",
+        "mandatory attend to the office"
+      ],
+      "responses": [
+        "If the office is closed for a long time, an employee must be present on the opening day of the office."
+      ]
+    },
+    {
+      "tag": "office rules violation",
+      "patterns": [
+        "office Rule violation consequence",
+        "violate office rule",
+        "rule violate",
+        "rule violate office",
+        "office rule violate",
+        "violation office rule",
+        "break office rule",
+        "violation rule office",
+        "violate rule office"
+      ],
+      "responses": [
+        "If the employee is absent from the office presenting false information, two days salary will be deducted for each of those days. Ask me about 'attendance rules violation'."
+      ]
+    },
+    {
+      "tag": "Office Courtesy",
+      "patterns": [
+        "office courtesy",
+        "courtesy in the office",
+        "office rules",
+        "rules office",
+        "rules regulations office",
+        "office manners",
+        "rules and manners",
+        "rules and manners of office"
+      ],
+      "responses": [
+        "The success of ASL is achieved through the combined efforts of all of the employees from start to finish. So, 1) an amicable and hail-fellow-well-met relation must be maintained with everyone in the office. 2)No confidential information from one's own department may be provided to any employee in another department. 3) When communicating with any employee of another department, care must be taken so that the reputation of one's own department is not tarnished.                                                                                                                                                       4) This must be remembered that regardless of the department, the person who joined the office the day before is a senior."
+      ]
+    },
+    {
+      "tag": "Dress code",
+      "patterns": [
+        "dress code",
+        "office dress code",
+        "official dress code?",
+        "dress code mandatory",
+        "come office wearing",
+        "official dress code mandatory",
+        "dress code mandatory office",
+        "office maintain dress code?",
+        "alchemy maintain dress code?"
+      ],
+      "responses": [
+        "All office workers must come to the office in formal attire. Those who visit the organization of potential customers or current customers or visit different organizations for various official reasons, must wear such elegant official attire so that the reputation of the organization is not tarnished in any way. In the case of boys, haircuts and beards should also be taken into account in the office environment."
+      ]
+    },
+    {
+      "tag": "Communication Policy",
+      "patterns": [
+        "communication policy",
+        "communication manner policy",
+        "communication manner",
+        "virtual communication terms",
+        "communication through mobile",
+        "communication through internet",
+        "client communication manner"
+      ],
+      "responses": [
+        "1) When communicating with any person outside or inside the office, do not  speak in such a way that the employee personally and his organization Alchemy Software Limited is represented badly. 2) At all times try to communicate with the customer and potential customers in order to gain the reputation of oneself and the organization. 3) If a customer misbehaves for any reason or without any reason, he should try to resolve it by using polite head, in no way can it be used in anger. 4)Patience is required to communicate politely by understanding the customer nicely. And also through mobile communication an employee must remember that he/she representing the company and must behave accordingly. "
+      ]
+    },
+    {
+      "tag": "Office property",
+      "patterns": [
+        "office equipment use policy",
+        "use office property",
+        "rules use office property",
+        "policy using office property",
+        "office property maintenance",
+        "maintenance office property",
+        "maintain office property",
+        "recovery option office property",
+        "regular maintenance office properties"
+      ],
+      "responses": [
+        "1) At any time when an employee gets the property, he should check it thoroughly and according to the rules of the office (email / WhatsApp) he should give a note that it is working properly. If there is any problem, it should be reported to the office within 24 hours. Similarly, when this property is to be transferred, it must be returned according to what was understood. 2) Such common properties which will be used by all, should be maintained by following a certain routine so that maximum utilization can be made from the properties. For example, cleaning the AC filter, checking the water level of the IPS, arranging for service if a device is not working properly, etc., should be done at one's own risk without looking at anyone else. 3)An employee need to be aware about preventing wastage while using  electronic items that constantly use electricity. Check that everything is closed properly before leaving the office especially who are leaving last. 4) If any property needs to be repaired during using period, that must be repaired at your own risk."
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Are you funny!",
+        "Do you know joke?"
+      ],
+      "responses": [
+        "I ate a clock yesterday, it was very time-consuming.",
+        "Person 1: Hey Crissy!, do you remember me? Person 2: Wrong number. Person 1: What is your number then?",
+        "Two guys stole a calendar. They got six months each.",
+        "How did the telephone propose to its girlfriend? He gave her a ring.",
+        "Why was the birthday cake as hard as a rock? Because it was marble cake!"
+      ]
+    },
+    {
+      "tag": "miscellaneous",
+      "patterns": ["tell", "Tell me something"],
+      "responses": ["There is a great area of telling. Ask me something specific and  related!"]
+    }
+  ]
+}

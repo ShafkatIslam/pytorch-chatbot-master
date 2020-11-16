@@ -1,0 +1,205 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "attendance",
+        "patterns": [
+        "how to give attendance?",
+        "attendance procedure",
+        "procedure of attendance",
+        "how can i give attendance?",
+        "tell me the attendance procedure"
+      ],
+          "responses": [
+          "Using the ICMS app the employee will give attendance by clicking two pictures. One is selfie and the other is shoefie. The pictures must be clear and in proper way as instructed. You can also ask //attendance from office// or //attendance outside of office//"
+      ]
+    },
+    {
+      "tag": "attendance from office",
+      "patterns": [
+        "How to give attendance from office"
+
+      ],
+      "responses": [
+        "Those who will be present in the office and will be on duty: Those employees must be present in the office of Alchemy Software Limited and pay the attendance. Attendance in front of the elevator, under the office or from any other place will be considered as breaking the office rules.  "
+      ]
+    },
+    {
+      "tag": "attendance from outside",
+      "patterns": [
+        "How to give attendance from outside?",
+        "How long does shipping take?",
+        "When do I get my delivery?"
+      ],
+      "responses": [
+        "Those who will provide attendance from outside the office: If any person pays attendance from outside the office, he / she must specify the day before by entering in detail where he / she should be in the apps subject to his / her prior prior permission. And the details / pictures of the place should be mentioned at the time of his attendance and the picture should be taken at the time of attendance in such a way that the location of the place can be seen on the signboard. "
+      ]
+    },
+    {
+      "tag": "late attendance",
+      "patterns": [
+        "Maximum late attendance",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        " If an employee delays up to 15 minutes from the start of office hours, it will not be considered as delay. But if he joins in the delay from the next minute, it will be treated as a delay."
+      ]
+    },
+    {
+      "tag": "ICMS not work",
+      "patterns": ["What if the app doesn't work"],
+      "responses": ["If the app doesn't work inform immediately to the seniors and give an email with a screenshot mentioning the problem. "]
+    },
+    {
+      "tag": "exit attendance in office",
+      "patterns": ["exit  attendance from office"],
+      "responses": ["Those who will provide exit attendance from the office:  In this case, you must pay exit attendance from inside the office. "]
+    },
+    {
+      "tag": "exit attendance outside",
+      "patterns": ["exit attendance from outside"],
+      "responses": ["If an employee has to leave the office for the sake of work, he / she must give an exit attendance stating why he / she should leave the office or place."]
+    },
+    {
+      "tag": "attendance rule violation",
+      "patterns": ["attendance Rule violation consequences"],
+      "responses": ["Any rule violation of attendance will charge fine from salary and office may take any kind of severe punishment for the same kind of repetition. If there is a delay of three days in any month, one day's salary will be deducted for those three days. If exit attendance is given in front of the elevator, under the office or intentionally showing extra time from any other place, a fine of Tk. 50 will be charged for that day."]
+    },
+    {
+      "tag": "Office Schedule",
+      "patterns": ["How many working days in a week?"],
+      "responses": ["Generally Saturday to Thursday is considered working day and Friday is considered off day for all employees.10 am to 6 pm will be treated as an employee's duty time. There is a probable time for each job according to the ongoing work experience of the office. According to him, if any employee performs the work, it is considered normal. But if an employee fails to perform the work assigned to him on time, then he may have to work even after the period of duty."]
+    },
+    {
+      "tag": "icms",
+      "patterns": ["icms", "icms app", "about icms", "what is icms?"],
+      "responses": ["A mobile app, provided by Alchemy Software Limited, by which an employee can easily update his/her daily work information and submit his/her attendance and more. "]
+    },
+    {
+      "tag": "reasone of use ICMS",
+      "patterns": ["Reason to use the app","why use ICMS app?"],
+      "responses": ["All employees are required to provide information on all day-to-day activities and out-of-office attendance, starting from their attendance, using the ICMS apps provided by the office during office duty."]
+    },
+    {
+      "tag": "ICMS use policy",
+      "patterns": ["what is the Conditions of using ICMS app"],
+      "responses": ["i) Mobile internet and GPS must be on during duty time. Even the employee has to go out during duty time or worki purpose he/she has to keep the ICMS app on ii)Current working status must be updated in real time so that his superiors and management board know what he is currently working on. iii) Mobile SIM and internet with adequate balance will be provided by ASL. The package cannot be used for personal purpose and even if it is used for personal reason , the employee must update the package and keep the internet active to use the ICMS. iv) A compatile mobile handset has to use for using the ICMS app. "]
+    },
+    {
+      "tag": "icms input system",
+      "patterns": ["How to update different ICMS input form?"],
+      "responses": ["Detailed training will be provided on which methods to input information in which input form of the app."]
+    },
+    {
+      "tag": "ICMS daily log input",
+      "patterns": ["How give Daily log /Input form issue"],
+      "responses": ["In case of emergency, if the app cannot work for any reason, talk to your colleagues and make sure that there is a problem with the server / apps. If there is a problem with the server / apps, you need to send your work / other information to the office email."]
+    },
+    {
+      "tag": "Input suggession",
+      "patterns": ["ICMS Suggestion"],
+      "responses": ["There are options in the app to let you know if you have any valuable suggestions, plan complaints, any other important issues that you are thinking about. Using that option you can give your valuable suggestions to the office if you want."]
+    },
+    {
+      "tag": "Leave ",
+      "patterns": ["How many dayes Deserved for leave","monthly leave","leave per month"],
+      "responses": ["An employee will get a maximum of two days off per month. "]
+    },
+    {
+      "tag": "weekly Holiday",
+      "patterns": ["Weekly holiday","Off day","Weekend"],
+      "responses": ["Friday is considered weekly holiday. "]
+    },
+    {
+      "tag": "earned leave",
+      "patterns": ["Accumulated earned leave"],
+      "responses": ["If the employee wants, he / she can take maximum 5 days leave together with his / her earned leave. In that case you have to apply for this leave at least 15 days in advance."]
+    },
+    {
+      "tag": "weekly Holiday",
+      "patterns": ["Weekly holiday","Off day","Weekend"],
+      "responses": ["If the employee wants, he / she can take maximum 5 days leave together with his / her earned leave. In that case you have to apply for this leave at least 15 days in advance."]
+    },
+    {
+      "tag": "paid leave",
+      "patterns": ["Compensation of earned leave"],
+      "responses": ["No financial compensation will be paid against the earned leave. If the leave earned every year is not spent within the month of December of that year, it will not be transferred to the next year. "]
+    },
+    {
+      "tag": "govt. Holiday",
+      "patterns": ["company follow all goverment  Holidays"],
+      "responses": ["All govt. holidays"]
+    },
+    {
+      "tag": "Leave Application",
+      "patterns": ["Leave application","How to apply for advanced leave","Leave application process"],
+      "responses": ["ICMS apps have arrangements for applying for leave in advance. After applying, it has to be printed and submitted to the appropriate authority with approval at least 3 working days in advance.Approved leave documents must be submitted to the HR department within two working days of the beginning of the month prior to the preparation of the payroll or salary account for the month."]
+    },
+    {
+      "tag": "Emergency leave",
+      "patterns": ["Emergency leave","Sudden leave","Leave without prior information"],
+      "responses": ["If an employee is unable to report for duty due to unavoidable reasons, he / she has to inform his / her superior by phone / WhatsApp and email details. The next present day on duty, you will have to submit the appropriate certificate and submit the approved documents subject to approval."]
+    },
+    {
+      "tag": "Mendatory day",
+      "patterns": ["Mandatory present day","Must attend days "],
+      "responses": ["If the office is closed for a long time, an employee must be present on the opening day of the office."]
+    },
+    {
+      "tag": "office rule violance",
+      "patterns": ["office Rule violation consequences"],
+      "responses": ["If the employee is absent from the office by presenting false information, two days salary will be deducted for each of those days."]
+    },
+    {
+      "tag": "Interactive policy",
+      "patterns": ["Office courtesy","Office manners","Rules and manners"],
+      "responses": ["The success of ASL is achieved through the combined efforts of all of the employees from start to finish. So,            1) an amicable and hail-fellow-well-met relation must be maintained with everyone in the office. 2)No confidential information from one's own department may be provided to any employee in another department. 3) When communicating with any employee of another department, care must be taken so that the reputation of one's own department is not tarnished.                                                                                                                                                       4) This must be remembered that regardless of the department, the person who joined the office the day before is a senior."]
+    },
+    {
+      "tag": "Dress code",
+      "patterns": ["Dress Code","what is Official dress code?"],
+      "responses": ["All office workers must come to the office in formal attire. Those who visit the organization of potential customers or current customers or visit different organizations for various official reasons, must wear such elegant official attire so that the reputation of the organization is not tarnished in any way. In the case of boys, haircuts and beards should also be taken into account in the office environment."]
+    },
+    {
+      "tag": "Communication Policy",
+      "patterns": ["What is communication policy","Official manner policy","Virtual communication terms","Communication through mobile/internet","Client communication manner"],
+      "responses": ["1) When communicating with any person outside or inside the office, do not  speak in such a way that the employee personally and his organization Alchemy Software Limited is represented badly. 2) At all times try to communicate with the customerand potential customers in order to gain the reputation of oneself and the organization. 3) If a customer misbehaves for any reason or without any reason, he should try to resolve it by using polite head, in no way can it be used in anger. 4)Patience is required to communicate politely by understanding the customer nicely. And also through mobile communication an employee must remember that he/she representing the company and must behave accordingly. "]
+    },
+    {
+      "tag": "Office property",
+      "patterns": ["Equipment using policy","Office property maintainance","Recovery option of office property","Regular maintainance of properties"],
+      "responses": ["1) At any time when he gets the property, he should check it thoroughly and according to the rules of the office (email / WhatsApp) he should give a note that it is working properly. If there is any problem, it should be reported to the office within 24 hours. Similarly, when this property is to be transferred, it must be returned according to what was understood. 2) Such common properties which will be used by all, should be maintained by following a certain routine so that maximum utilization can be made from the properties. For example, cleaning the AC filter, checking the water level of the IPS, arranging for service if a device is not working properly, etc., should be done at one's own risk without looking at anyone else. 3)An employee need to be aware about preventing wastage while using  electronic items that constantly use electricity. Check that everything is closed properly before leaving the office especially who are leaving last. 4) If any property needs to be repaired during using period, that must be repaired at your own risk."]
+    }
+  ]
+}
