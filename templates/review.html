@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--link rel="stylesheet" href="css/custom.css"-->
-	<style type="text/css"> 
+	<style type="text/css">
 		body{
     font-family: 'Raleway', sans-serif;
     background: #E9ECE9;
@@ -51,6 +51,7 @@
     color: #545454;
     font-size: .85rem;
   }
+
   .comments .comment .icon-rocknroll:hover {
     opacity: .5;
   }
@@ -81,7 +82,7 @@
     opacity: 1;
   }
   .comment-box-main{
-    background: #CA1D5F;
+    background: #000000;
   }
   @media (min-width: 320px) and (max-width: 480px){
     .comments .comment h4 {
@@ -104,8 +105,6 @@
 	<div class="container">
 		<div class="row mt-5">
 			<div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3 col-12 comments-main pt-4 rounded">
-
-
 				<ul class="p-0">
 					<li>
 						<div class="row comments mb-2">
@@ -113,7 +112,7 @@
 							    <img id="profile-photos" src="http://nicesnippets.com/demo/man02.png" class="rounded-circle" />
 							</div>
 							<div class="col-md-7 col-sm-7 col-8 comment rounded mb-2">
-								<h4 class="m-0"><a href="#">{{name_values}}(Me)</a></h4>
+								<h4 class="m-0"><a href="#">You</a></h4>
 								<like></like>
 								<div class="mb-0 text-white" role="alert">{{user_input}}</div>
 							</div>
@@ -128,60 +127,39 @@
 						    	<img id="profile-photo" src="http://nicesnippets.com/demo/man01.png" class="rounded-circle" />
 							</div>
 							<div class="col-md-9 col-sm-9 col-9 comment rounded mb-2">
-								<h4 class="m-0"><a href="#">ASL-Bot</a></h4>
+								<h4 class="m-0"><a href="#">ASl-Bot</a></h4>
 							    <like></like>
 							    <div class="mb-0 text-white" role="alert"> {{bot_response}}</div>
 							</div>
 						</div>
 					</li>
                 </ul>
-				{% if error %}
-                    <div class="alert alert-info">
-                       {{ error }}
-                     </div>
-                {% endif %}
-                <form action="/process" method="POST">
-				<div class="row comment-box-main p-3 rounded-bottom">
-					<div class="col-md-9 col-sm-9 col-9 pr-0 comment-box">
-					  <label class="mb-0 text-white" for="tags">Select Question Topics</label>
 
-                            <!-- The value for `for=""` and `id=""` has to be same. -->
-						<input id="names" name="names_input" type="hidden" value={{name_values}}>
-                            <select name="tags" id="tags">
-								<option value="Select">Select</option>
-                              <option value="what is icms">What is
-								  ICMS</option>
-                              <option value="working days">Working Days</option>
-                              <option value="working time">Working Time</option>
-                              <option value="attendance from office">Attendance From Office</option>
-                              <option value="attendance outside of office">Attendance Outside of Office</option>
-                              <option value="exit attendance procedure">Exit Attendance Procedure</option>
-                              <option value="exit attendance outside of office">Exit Attendance Outside of Office</option>
-                              <option value="late attendance">Late Attendance</option>
-                              <option value="use icms">Use ICMS</option>
-                              <option value="ICMS Server Problem">ICMS Server Problem</option>
-                              <option value="icms input system">ICMS Input System</option>
-                              <option value="office sim or internet for personal use">Office sim or Internet for Personal Use</option>
-                              <option value="Going outside of office">Going Outside of Office</option>
-                              <option value="rules of imaging or capturing photo">Rules of Imaging or Capturing Photo</option>
-                              <option value="suggestion input">Suggestion Input</option>
-                              <option value="alchemy privacy policy">Alchemy Privacy Policy</option>
-                              <option value="data privacy policy">Data Privacy Policy</option>
-                              <option value="informing office about any crim">Informing Office about any Crime</option>
-                              <option value="attendance rule violation">Attendance Rule Violation</option>
-                              <option value="attendance rule violation">Other</option>
-                            </select>
-			  		</div>
-					</br>
-					</br>
+                <form action="/review" method="POST">
+				<div class="row comment-box-main p-3 rounded-bottom">
 			  		<div class="col-md-9 col-sm-9 col-9 pr-0 comment-box">
-					  <input type="text" name="user_input" class="form-control"  placeholder="Type a message" autofocus />
+					  <label class="mb-0 text-white" for="review">Have you satisfied with the response?</label>
+						<input id="names" name="names_input" type="hidden" value={{user_names}}>
+						<input id="tags" name="tags_input" type="hidden" value={{tag_value}}>
+						<input id="questions" name="questions_input" type="hidden" value={{user_input}}>
+						<input id="answers" name="answers_input" type="hidden" value={{bot_response}}>
+                            <!-- The value for `for=""` and `id=""` has to be same. -->
+                            <select name="review" id="review">
+                                <option value="Select">Select</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            </select>
 			  		</div>
 			  		<div class="col-md-3 col-sm-2 col-2 pl-0 text-center send-btn">
 			  			<button class="btn btn-info">Send</button>
 			  		</div>
 				</div>
                 </form>
+                {% if error %}
+                    <div class="alert alert-info">
+                       {{ error }}
+                     </div>
+                {% endif %}
 			</div>
 		</div>
 	</div>
