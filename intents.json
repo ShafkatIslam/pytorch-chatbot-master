@@ -642,9 +642,11 @@
         "Tell me a joke!",
         "Tell me something funny!",
         "Are you funny!",
-        "Do you know joke?"
+        "Do you know joke?",
+        "Do you know Shafkat?"
       ],
       "responses": [
+        "My Boss, Everyday he is trying to educate me.",
         "I ate a clock yesterday, it was very time-consuming.",
         "Person 1: Hey Crissy!, do you remember me? Person 2: Wrong number. Person 1: What is your number then?",
         "Two guys stole a calendar. They got six months each.",

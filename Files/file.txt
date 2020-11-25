@@ -1,4 +1,4 @@
-Hi
+Hello
 Hi there, how can I help?
 No
 
@@ -494,4 +494,30 @@ If an employee delays up to 15 minutes from the start of office hours, it will n
 
 We want more
 I donot understand
+
+what is icms
+A mobile app, provided by Alchemy Software Limited, by which an employee can easily update his/her daily work information and submit his/her attendance and more. And Alchemy provides mobile sim card to use the icms app where there will be enough internet to run the app out. "It is mandatory for an employee to use icms for giving attendance and updating daily log outside of any inconvenience in app or server. 
+Yes
+
+can i give attendance from office
+There is a great area of telling. Ask me something specific and  related!
+Yes
+
+leave policy
+Any rule violation of attendance will charge fine from salary and office may take any kind of severe punishment for the same kind of repetition. If there is a delay of three days in any month, one day's salary will be deducted for those three days. If exit attendance is given in front of the elevator, under the office or intentionally showing extra time from any other place, a fine of Tk. 50 will be charged for that day.
+No
+
+what are the allowances
+Alchemy offers three types of allowances. - 1) Vehicle fee or Transportation fee 2)Travel allowance or Tour fee or visit fee and 3) Mobile bill
+Yes
+
+how many leaves in a month
+An employee will get a maximum of two days leave per month. If the employee wants, he/she can take maximum 5 days leave together with his/her earned leave. In that case, he/she must have at least 5 days leave remaining and have to apply for this leave at least 15 days in advance. Besides, No financial compensation will be paid against the earned leave. And if the leave earned every year is not spent within the year, it will not be transferred to the next year.
+Yes
+
+
+
+can i go out of office in office time
+An employee cannot go out of the office to have breakfast or for personal reason after giving attendance.  If there is an emergency and/or for official work, he must take the permission of in-charge. And If one go out of office in office time, he/she have to keep icms, gps and internet on. Otherwise, it will be considered intentional and proper action will be taken.
+Yes
 
