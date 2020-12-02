@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-<title>ASl-Bot</title>
+<title>ASL-Policy</title>
+<link rel="icon" type="image/png" href="{{url_for('static',filename='asl.jpg')}}"/>
   <head>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -30,7 +31,7 @@
   }
   .comments .comment {
     padding: 5px 10px;
-    background: #00AF90;
+    background: #fdf8ff;
   }
   .comments .comment:hover time{
     opacity: 1;
@@ -84,6 +85,10 @@
   .comment-box-main{
     background: #000000;
   }
+  	.nav{
+    max-height: 450px;
+    overflow-y: scroll;
+}
   @media (min-width: 320px) and (max-width: 480px){
     .comments .comment h4 {
       font-size: 12px;
@@ -97,24 +102,32 @@
   }
 	</style>
   </head>
-  <div style="display: flex; justify-content: center;">
+  <body>
+  <div class="col-md-12">
+	  <div class="row justify-content-start">
+
+    <div class="col-md-2">
+
+    </div>
+		  <div class="col-md-6">
+    <div style="display: flex; justify-content: center;">
     <img src="{{url_for('static',filename='chat.png')}}" style="width: 200px; height: 200px;" />
   </div>
-  <h3 style="text-align: center">ASL-Bot</h3>
-  <body>
-	<div class="container">
-		<div class="row mt-5">
-			<div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3 col-12 comments-main pt-4 rounded">
+  <h3 style="text-align: center">ASL-Policy</h3>
+	  <div class="container">
+		<div>
+			<div class="col-md-10 offset-md-1 col-sm-9 offset-sm-9 col-12 comments-main pt-4 rounded">
+
 				<ul class="p-0">
 					<li>
 						<div class="row comments mb-2">
 							<div class="col-md-2 offset-md-2 col-sm-2 offset-sm-2 col-3 offset-1 text-center user-img">
 							    <img id="profile-photos" src="http://nicesnippets.com/demo/man02.png" class="rounded-circle" />
 							</div>
-							<div class="col-md-7 col-sm-7 col-8 comment rounded mb-2">
-								<h4 class="m-0"><a href="#">You</a></h4>
+							<div class="col-md-7 col-sm-7 col-8 comment border border-danger rounded mb-2">
+								<h4 class="m-0 font-weight-bold"><a href="#">{{message}} (Me)</a></h4>
 								<like></like>
-								<div class="mb-0 text-white" role="alert">{{user_input}}</div>
+								<div class="mb-0 text-black" role="alert">{{user_input}}</div>
 							</div>
 						</div>
 					</li>
@@ -124,27 +137,26 @@
 					<li>
 						<div class="row comments mb-2">
 							<div class="col-md-2 col-sm-2 col-3 text-center user-img">
-						    	<img id="profile-photo" src="http://nicesnippets.com/demo/man01.png" class="rounded-circle" />
+						    	<img id="profile-photo" src="{{url_for('static',filename='asl.jpg')}}" class="rounded-circle" />
 							</div>
-							<div class="col-md-9 col-sm-9 col-9 comment rounded mb-2">
-								<h4 class="m-0"><a href="#">ASl-Bot</a></h4>
+							<div class="col-md-9 col-sm-9 col-9 border border-danger comment rounded mb-2">
+								<h4 class="m-0 font-weight-bold"><a href="#">ASL-Policy</a></h4>
 							    <like></like>
-							    <div class="mb-0 text-white" role="alert"> {{bot_response}}</div>
+							    <div class="mb-0 text-black" role="alert"> {{bot_response}}</div>
 							</div>
 						</div>
 					</li>
                 </ul>
-
-                <form action="/review" method="POST">
+				 <form action="/review" method="POST">
 				<div class="row comment-box-main p-3 rounded-bottom">
 			  		<div class="col-md-9 col-sm-9 col-9 pr-0 comment-box">
-					  <label class="mb-0 text-white" for="review">Have you satisfied with the response?</label>
-						<input id="names" name="names_input" type="hidden" value={{user_names}}>
-						<input id="tags" name="tags_input" type="hidden" value={{tag_value}}>
-						<input id="questions" name="questions_input" type="hidden" value={{user_input}}>
-						<input id="answers" name="answers_input" type="hidden" value={{bot_response}}>
+					  <label class="mb-0 text-white" for="review">Are you satisfied with the response?</label>
+						<textarea id="names" name="names_input" style="display:none;">{{user_names}}</textarea>
+						<textarea id="tags" name="tags_input" style="display:none;">{{tag_value}}</textarea>
+						<textarea id="questions" name="questions_input" style="display:none;">{{user_input}}</textarea>
+						<textarea id="answers" name="answers_input" style="display:none;">{{bot_response}}</textarea>
                             <!-- The value for `for=""` and `id=""` has to be same. -->
-                            <select name="review" id="review">
+                            <select name="review" id="review" autofocus>
                                 <option value="Select">Select</option>
                               <option value="Yes">Yes</option>
                               <option value="No">No</option>
@@ -160,9 +172,50 @@
                        {{ error }}
                      </div>
                 {% endif %}
+
 			</div>
 		</div>
 	</div>
+    </div>
+		  <div class="col-md-4">
+	  <div class="form-group d">
+	 <table  align="center">
+		 <tr>
+			 <td><h3 class="list-group-item-heading" style="font-size: 25px;color: #00bd14;font-family: Algerian; font-style: initial">Hello {{message}} </h3></td>
+		 </tr>
+		 <tr>
+			 <td>
+				 <form method ="post" action="/logout">
+					 <button type="submit" class="btn-warning btn-block">
+                        &nbsp; Logout
+                    </button>
+				 </form>
+			 </td>
+		 </tr>
+	 </table>
+ </div>
+	  <div class="center text-center text-danger font-weight-bold border border-dark ">Conversation History</div>
+	  <div class="nav ">
+		  <ul class="list-group">
+			  {% for x,y in all_history %}
+
+			   <li class="list-group-item">
+				   <h6 class="font-size"><b>{{message}} (Me):</b> {{x}}</h6>
+				   <br>
+				   <h6><b>ASL-Policy:</b> {{y}}</h6>
+
+			   </li>
+			  {% endfor %}
+</ul>
+	  </div>
+    </div>
+  </div>
+	  </div>
   </body>
+<script>
+    function updateSelected(event) {
+        document.getElementById('res').innerHTML = event.target.value;
+    }
+</script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/0.12.14/vue.min.js'></script>
 </html>

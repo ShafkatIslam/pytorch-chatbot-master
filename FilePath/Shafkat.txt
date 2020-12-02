@@ -1,0 +1,35 @@
+late
+late
+If
+Yes
+
+what
+icms
+A
+Yes
+
+use
+how
+All
+Yes
+
+what is icms
+icms
+A mobile app, provided by Alchemy Software Limited, by which an employee can easily update his/her daily work information and submit his/her attendance and more. And Alchemy provides mobile sim card to use the icms app where there will be enough internet to run the app out. "It is mandatory for an employee to use icms for giving attendance and updating daily log outside of any inconvenience in app or server. 
+Yes
+
+what is icms
+icms
+A mobile app, provided by Alchemy Software Limited, by which an employee can easily update his/her daily work information and submit his/her attendance and more. And Alchemy provides mobile sim card to use the icms app where there will be enough internet to run the app out. "It is mandatory for an employee to use icms for giving attendance and updating daily log outside of any inconvenience in app or server. 
+Yes
+
+what is icms
+icms
+A mobile app, provided by Alchemy Software Limited, by which an employee can easily update his/her daily work information and submit his/her attendance and more. And Alchemy provides mobile sim card to use the icms app where there will be enough internet to run the app out. "It is mandatory for an employee to use icms for giving attendance and updating daily log outside of any inconvenience in app or server. 
+Yes
+
+late attendance
+late attendance
+If an employee delays up to 15 minutes from the start of office hours, it will not be considered as delay. But if he joins in the delay from the next minute, it will be treated as a delay.
+Yes
+
