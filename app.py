@@ -8,6 +8,9 @@ import bcrypt
 from flask_bcrypt import Bcrypt
 import torch
 
+import requests
+from bs4 import BeautifulSoup
+
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize, stem
 
@@ -42,14 +45,40 @@ app.config['SECRET_KEY'] = 'super secret key'
 sess = Session()'''
 
 app.config['MONGO_URI'] = 'mongodb+srv://Shafkat:Shafkaait@cluster0.mkcss.mongodb.net/Chatbot'
-#app.config['MONGO_URI'] = 'mongodb+srv://Shafkat:shafkaait@cluster0.3z9yl.mongodb.net/Chatbot'
+#app.config['MONGO_URI'] = 'mongodb+srv://Shafkat:shafkaait@cluster0.mhvly.mongodb.net/chatdata'
 
 mongo = PyMongo(app)
 
 @app.route('/')
 def index():
     if 'username' in session:
-        return render_template('index.html',message= session['username'])
+        username = session['username']
+        chatTable = mongo.db.Chat
+        chatData = chatTable.find({'name': username})
+        all_questions = []
+        all_answers = []
+        all_yes_reviews = []
+        all_no_reviews = []
+        if chatData:
+            for x in chatData:
+                questions = x['details']['question']
+                answers = x['details']['answer']
+                reviews = x['details']['review']
+                all_questions.append(questions)
+                all_answers.append(answers)
+                if reviews == 'Yes':
+                    all_yes_reviews.append(reviews)
+                elif reviews == 'No':
+                    all_no_reviews.append(reviews)
+
+            all_questions.reverse()
+            all_answers.reverse()
+
+            yes_count = len(all_yes_reviews)
+            no_count = len(all_no_reviews)
+            efficiency = (int(yes_count)/(int(yes_count)+int(no_count)))*100
+            efficiency = round(efficiency, 2)
+        return render_template('index.html',message= session['username'],all_history=zip(all_questions, all_answers),yes_count=yes_count,no_count=no_count,efficiency=efficiency)
     return render_template('mainindex.html')
 
 
@@ -66,6 +95,8 @@ def login():
         login_user = users.find_one({'name': request.form['username']})
         all_questions = []
         all_answers = []
+        all_yes_reviews = []
+        all_no_reviews = []
         if login_user:
             if bcrypt.check_password_hash(login_user['password'], request.form['pass']):
                 session['username'] = request.form['username']
@@ -76,11 +107,21 @@ def login():
                     for x in chatData:
                         questions = x['details']['question']
                         answers = x['details']['answer']
+                        reviews = x['details']['review']
                         all_questions.append(questions)
                         all_answers.append(answers)
-
+                        if reviews == 'Yes':
+                            all_yes_reviews.append(reviews)
+                        elif reviews == 'No':
+                            all_no_reviews.append(reviews)
+                    all_questions.reverse()
+                    all_answers.reverse()
+                    yes_count = len(all_yes_reviews)
+                    no_count = len(all_no_reviews)
+                    efficiency = (int(yes_count) / (int(yes_count) + int(no_count))) * 100
+                    efficiency = round(efficiency, 2)
                     return render_template('index.html', message=session['username'],
-                                           all_history=zip(all_questions, all_answers))
+                                           all_history=zip(all_questions, all_answers),yes_count=yes_count,no_count=no_count,efficiency=efficiency)
                 else:
                     return render_template('index.html', message=session['username'],
                                            all_history=zip(all_questions, all_answers))
@@ -135,9 +176,9 @@ def process():
             #sentence = tokenize(sentence)
 
             sentence = tokenize(sentence.lower())
-            stopsets = ['a', 'an', 'the', 'i', 'you', 'one', 'do', 'have', 'of', 'in', 'like', 'for', 'from', 'to',
+            stopsets = ['a', 'an', 'the', 'i', 'you', 'one', 'do', 'of', 'in', 'like', 'for', 'from', 'to',
                         'as', 'by', 'about', 'off', 'did', 'am', 'is',
-                        'are', 'was', 'were', 'if', 'is', 'on', 'what', 'why', 'when', 'where', 'which', 'and', 'how',
+                        'are', 'was', 'were', 'if', 'is', 'on', 'what', 'when', 'where', 'which', 'and',
                         'tell',
                         'me', 'my', 'must', 'can', 'could', 'would', 'that', 'or', 'anyone', 'any', 'many', 'there']
             stopX = [stem(w) for w in sentence if w not in stopsets]
@@ -172,18 +213,32 @@ def process():
                             chatData = chatTable.find({'name': username})
                             all_questions = []
                             all_answers = []
+                            all_yes_reviews = []
+                            all_no_reviews = []
                             if chatData:
                                 for x in chatData:
                                     questions = x['details']['question']
                                     answers = x['details']['answer']
+                                    reviews = x['details']['review']
                                     all_questions.append(questions)
                                     all_answers.append(answers)
+                                    if reviews == 'Yes':
+                                        all_yes_reviews.append(reviews)
+                                    elif reviews == 'No':
+                                        all_no_reviews.append(reviews)
+                                all_questions.reverse()
+                                all_answers.reverse()
+                                yes_count = len(all_yes_reviews)
+                                no_count = len(all_no_reviews)
+                                efficiency = (int(yes_count) / (int(yes_count) + int(no_count))) * 100
+                                efficiency = round(efficiency, 2)
 
                                 return render_template('review.html', message=session['username'], user_names=username,
                                                        tag_value=tage_value,
                                                        user_input=question,
                                                        bot_response=random.choice(intent['responses']),
-                                                       all_history=zip(all_questions, all_answers))
+                                                       all_history=zip(all_questions, all_answers),yes_count=yes_count,
+                                                       no_count=no_count,efficiency=efficiency)
                             else:
                                 return render_template('review.html', message=session['username'], user_names=username,
                                                        tag_value=tage_value,
@@ -192,34 +247,106 @@ def process():
                                                        all_history=zip(all_questions, all_answers))
                         # print(f"{bot_name}: {random.choice(intent['responses'])}")
             else:
+                print("hello")
                 if tag_result == 'Select':
                     return render_template('index.html', user_input=question, bot_response="I don't understand",
                                            error='Please select any option the dropdown')
                 else:
                     # f = open("file.txt", "a")
                     # f.write(tage_value + '\n' + question + '\n' + 'I donot understand\n')
+                    bot_response= web_scraping(question)
                     chatTable = mongo.db.Chat
                     chatData = chatTable.find({'name': username})
                     all_questions = []
                     all_answers = []
+                    all_yes_reviews = []
+                    all_no_reviews = []
                     if chatData:
                         for x in chatData:
                             questions = x['details']['question']
                             answers = x['details']['answer']
+                            reviews = x['details']['review']
                             all_questions.append(questions)
                             all_answers.append(answers)
+                            if reviews == 'Yes':
+                                all_yes_reviews.append(reviews)
+                            elif reviews == 'No':
+                                all_no_reviews.append(reviews)
+                        all_questions.reverse()
+                        all_answers.reverse()
+                        yes_count = len(all_yes_reviews)
+                        no_count = len(all_no_reviews)
+                        efficiency = (int(yes_count) / (int(yes_count) + int(no_count))) * 100
+                        efficiency = round(efficiency, 2)
+
                         return render_template('review.html', message=session['username'], user_names=username,
                                                tag_value=tage_value,
                                                user_input=question,
-                                               bot_response="I don't understand",
-                                               all_history=zip(all_questions, all_answers))
+                                               bot_response=bot_response,
+                                               all_history=zip(all_questions, all_answers),yes_count=yes_count,no_count=no_count,efficiency=efficiency)
                     else:
                         return render_template('review.html', message=session['username'], user_names=username,
                                                tag_value=tage_value,
                                                user_input=question,
-                                               bot_response="I don't understand",
+                                               bot_response=bot_response,
                                                all_history=zip(all_questions, all_answers))
     return render_template('mainindex.html')
+
+
+def web_scraping(qs):
+    global flag2
+    global loading
+
+    URL = 'https://www.google.com/search?q=' + qs
+    page = requests.get(URL)
+
+    soup = BeautifulSoup(page.content, 'html.parser')
+
+    links = soup.findAll("a")
+    all_links = []
+    for link in links:
+        link_href = link.get('href')
+        if "url?q=" in link_href and not "webcache" in link_href:
+            all_links.append((link.get('href').split("?q=")[1].split("&sa=U")[0]))
+
+    flag = False
+    for link in all_links:
+        if 'https://en.wikipedia.org/wiki/' in link:
+            wiki = link
+            flag = True
+            break
+
+    div0 = soup.find_all('div', class_="kvKEAb")
+    div1 = soup.find_all("div", class_="Ap5OSd")
+    div2 = soup.find_all("div", class_="nGphre")
+    div3 = soup.find_all("div", class_="BNeawe iBp4i AP7Wnd")
+
+    if len(div0) != 0:
+        answer = div0[0].text
+    elif len(div1) != 0:
+        answer = div1[0].text + "\n" + div1[0].find_next_sibling("div").text
+    elif len(div2) != 0:
+        answer = div2[0].find_next("span").text + "\n" + div2[0].find_next("div", class_="kCrYT").text
+    elif len(div3) != 0:
+        answer = div3[1].text
+    elif flag == True:
+        page2 = requests.get(wiki)
+        soup = BeautifulSoup(page2.text, 'html.parser')
+        title = soup.select("#firstHeading")[0].text
+
+        paragraphs = soup.select("p")
+        for para in paragraphs:
+            if bool(para.text.strip()):
+                answer = title + "\n" + para.text
+                break
+    else:
+        answer = "Sorry. I could not find the desired results"
+
+
+    flag2 = False
+
+    return answer
+
 
 @app.route('/review',methods=['GET', 'POST'])
 def review():
@@ -247,15 +374,28 @@ def review():
             chatData = chatTable.find({'name': username})
             all_questions = []
             all_answers = []
+            all_yes_reviews = []
+            all_no_reviews = []
             if chatData:
                 for x in chatData:
                     questions = x['details']['question']
                     answers = x['details']['answer']
+                    reviews = x['details']['review']
                     all_questions.append(questions)
                     all_answers.append(answers)
+                    if reviews == 'Yes':
+                        all_yes_reviews.append(reviews)
+                    elif reviews == 'No':
+                        all_no_reviews.append(reviews)
+                all_questions.reverse()
+                all_answers.reverse()
+                yes_count = len(all_yes_reviews)
+                no_count = len(all_no_reviews)
+                efficiency = (int(yes_count) / (int(yes_count) + int(no_count))) * 100
+                efficiency = round(efficiency, 2)
 
                 return render_template('index.html', message=session['username'],
-                                       all_history=zip(all_questions, all_answers))
+                                       all_history=zip(all_questions, all_answers),yes_count=yes_count,no_count=no_count,efficiency=efficiency)
             else:
                 return render_template('index.html', message=session['username'],
                                        all_history=zip(all_questions, all_answers))
